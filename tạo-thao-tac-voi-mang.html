@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p>Sample Screen:</p>
+<input type="text" id="inpt">
+<button onclick="addArr()">Add</button>
+<button onclick="start()">Display</button>
+<p id="demo"></p>
+<br>
+<hr style="width: 40%; float: left">
+<script>
+    let arr = [];
+    function addArr(){
+        let a = document.getElementById('inpt').value; // a được nhập vào từ input là một string
+        let array = a.split(","); // dùng thuộc tính split để cắt chuỗi thành mảng theo vị trí của dấu ,
+        arr = arr.concat(array);
+    }
+    function start(){
+        let str = "";
+        for (let x in arr){
+            str += "Giá trị cuả phần tử số"+" "+ x +" "+"là:"+arr[x] +"<br>";
+        }
+        document.getElementById('demo').innerHTML = str;
+    }
+</script>
+</body>
+</html>
